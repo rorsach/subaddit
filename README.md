@@ -8,6 +8,7 @@ Try it: https://rorsach.github.io/subaddit/
 
 * Remember user preferences
 * Allow input directly on the page
+* Prevent negative numbers in subtraction
 * Show errors / Scoring
 * Show timer
 * Timer options

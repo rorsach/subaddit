@@ -6,6 +6,7 @@
   let allowBorrowing = false
   let operatorType = ''
 
+  const numberOfProblemsEl = document.getElementById('numberOfProblems')
   const minDigitsEl = document.getElementById('minDigits')
   const maxDigitsEl = document.getElementById('maxDigits')
   const generateSheetEl = document.getElementById('generateSheet')
@@ -102,6 +103,10 @@
         toggleAllowBorrowing()
       })
     })
+
+    numberOfProblemsEl.addEventListener('change', (event) => {
+      setNumberOfProblems(event.target.value)
+    })
     
   }
 
@@ -144,6 +149,7 @@
 
   function setDigitLimits() {
     maxNumDigits = parseInt(maxDigitsEl.value, 10)
+    maxNumDigits = maxNumDigits > 6 ? 6 : maxNumDigits
     minNumDigits = parseInt(minDigitsEl.value, 10)
   }
   
@@ -154,6 +160,12 @@
         radioButton.checked = true
       }
     })
+  }
+
+  function setNumberOfProblems(value) {
+    console.log('value:', value)
+    value = value > 500 ? 500 : value
+    numberOfProblems = value
   }
   
   function init() {

@@ -29,9 +29,18 @@
             <input type="radio" id="multiplication" name="operatorType" value="*" /><label for="multiplication">Multiplication</label>
 
             <label id="allowBorrowingLabel" class="ws_Label" for="allowBorrowing">Allow borrowing<input id="allowBorrowing" type="checkbox" class="ws_rightAlignedInput" /></label></br>
-            <label class="ws_Label" for="numberOfProblems">Number of problems: <input id="numberOfProblems" type="number" class="ws_rightAlignedInput" value="30" /></label><br/>
-            <label class="ws_Label" for="minDigits">Minimum number of digits: <input id="minDigits" type="number" class="ws_rightAlignedInput" value="1"/></label><br/>
-            <label class="ws_Label margin1 onlyBottomMargin" for="maxDigits">Maximum number of digits: <input id="maxDigits" type="number" class="ws_rightAlignedInput" value="1"/></label><br/>
+            <label class="ws_Label" for="numberOfProblems">
+                Number of problems:
+                <input id="numberOfProblems" type="number" class="ws_rightAlignedInput" value="30" min="1" max="500" />
+            </label><br/>
+            <label class="ws_Label" for="minDigits">
+                Minimum number of digits:
+                <input id="minDigits" type="number" class="ws_rightAlignedInput" value="1" min="1" max="6" />
+            </label><br/>
+            <label class="ws_Label margin1 onlyBottomMargin" for="maxDigits">
+                Maximum number of digits:
+                <input id="maxDigits" type="number" class="ws_rightAlignedInput" value="1" min="1" max="6" />
+            </label><br/>
             <button id="generateSheet" type="button" class="">Generate!</button>
         </form>
 
