@@ -1,0 +1,77 @@
+body {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1rem;
+    margin: 1rem;
+}
+
+input[type="radio"] {
+    margin:0 1rem 1rem 0;
+}
+
+input[type="radio"] + label:after {
+  content: '';
+  display: block;
+
+}
+
+input[type="number"] {
+    width: 3rem;
+}
+
+.ws_Label {
+    width: 20rem;
+    display: inline-block;
+    position: relative;
+    line-height: 1.5rem;
+}
+
+.ws_rightAlignedInput {
+    position: absolute;
+    right: 0;
+}
+
+.pad1 {
+    padding: 1rem;
+}
+
+.onlyBottomPad {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.margin1 {
+    margin: 1rem;
+}
+
+.onlyBottomMargin {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.onlyTopMargin {
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.ws_problem {
+    width: 4rem;
+    display: inline-block;
+    text-align: right;
+    border: 1px solid #eeeeee;
+    padding: 1rem;
+    margin: 1rem;
+    position: relative;
+}
+
+.ws_operator {
+    position: absolute;
+    left: 0;
+}

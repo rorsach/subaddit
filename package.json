@@ -1,0 +1,11 @@
+{
+  "name": "subaddit",
+  "version": "1.0.0",
+  "description": "Dynamically generate worksheets for arithmetic practice.",
+  "main": "js/main.js",
+  "author": "rorsach",
+  "license": "MIT",
+  "dependencies": {
+    "normalize.css": "^7.0.0"
+  }
+}

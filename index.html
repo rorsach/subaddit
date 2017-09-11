@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Worksheets For Arithmetic Practice</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+        <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <p>Dynamically generated worksheet to practice arithmetic.</p>
+
+        <form id="worksheetControls">
+            <input type="radio" id="addition" name="operatorType" value="+" checked /><label for="addition">Addition</label>
+            <input type="radio" id="subtraction" name="operatorType" value="-" /><label for="subtraction">Subtraction</label>
+            <input type="radio" id="multiplication" name="operatorType" value="*" /><label for="multiplication">Multiplication</label>
+
+            <label id="allowBorrowingLabel" class="ws_Label" for="allowBorrowing">Allow borrowing<input id="allowBorrowing" type="checkbox" class="ws_rightAlignedInput" /></label></br>
+            <label class="ws_Label" for="numberOfProblems">Number of problems: <input id="numberOfProblems" type="number" class="ws_rightAlignedInput" value="30" /></label><br/>
+            <label class="ws_Label" for="minDigits">Minimum number of digits: <input id="minDigits" type="number" class="ws_rightAlignedInput" value="1"/></label><br/>
+            <label class="ws_Label margin1 onlyBottomMargin" for="maxDigits">Maximum number of digits: <input id="maxDigits" type="number" class="ws_rightAlignedInput" value="1"/></label><br/>
+            <button id="generateSheet" type="button" class="">Generate!</button>
+        </form>
+
+        <div id="problemList"></div>
+        
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
