@@ -25,6 +25,7 @@
       problemArray.push(problem)
     }
 
+    console.log(problemArray)
     return problemArray;
   }
 
@@ -41,9 +42,13 @@
     let numDigits = getRandomInt(minNumDigits, maxNumDigits)
     
     for (let i = 0; i < numDigits; i++) {
-      operand1 = getRandomInt(0, 9)
-      operand2 = (subtractionOperatorEl.checked && allowBorrowing) ? getRandomInt(0, 9) :  getRandomInt(0, operand1)
+      operand1 = getRandomInt(0, 1)
+      let borrowingMath = (subtractionOperatorEl.checked && !allowBorrowing)
+      
+      operand2 = (borrowingMath) ? getRandomInt(0, operand1) : getRandomInt(0, 9)
 
+      console.log(operand1, operand2)
+      
       operand1String += operand1
       operand2String += operand2
     }
