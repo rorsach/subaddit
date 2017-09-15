@@ -4,6 +4,10 @@ body {
     margin: 1rem;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: "system-ui";
+}
+
 input[type="radio"] {
     margin:0 1rem 1rem 0;
 }

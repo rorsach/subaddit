@@ -27,7 +27,6 @@
       problemArray.push(problem)
     }
 
-    console.log(problemArray)
     return problemArray;
   }
 
@@ -47,7 +46,6 @@
       operand1 = getRandomInt(0, 9)
       operand2 = (subtractionOperatorEl.checked && appState.allowBorrowing) ? getRandomInt(0, 9) :  getRandomInt(0, operand1)
 
-      console.log(operand1, operand2)
       
       operand1String += operand1
       operand2String += operand2
@@ -69,7 +67,6 @@
   function addListeners() {
 
     document.addEventListener('change', (event) => {
-      console.log(event.target)
       serializeAppState()
     })
     
@@ -120,15 +117,11 @@
   }
 
   function serializeAppState() {
-    console.log('serializeAppState', localStorage.getItem('appState'));
     let jsonAppStateString = JSON.stringify(appState)
-    console.log('jsonAppStateString:', jsonAppStateString) 
     localStorage.setItem('appState', jsonAppStateString)
-    
   }
 
   function restoreAppState() {
-    console.log('restoreAppState', localStorage.getItem('appState'));
     if (localStorage.getItem('appState')) {
 
       let jsonAppStateString = localStorage.getItem('appState')
@@ -141,7 +134,6 @@
 
       operatorTypeEl.forEach((radioButton) => {
         if (radioButton.value === appState.operatorType) {
-          debugger;
           radioButton.checked = true
         }
       })
@@ -204,7 +196,6 @@
   }
 
   function setNumberOfProblems(value) {
-    console.log('value:', value)
     value = value > 500 ? 500 : value
     appState.numberOfProblems = value
   }
@@ -212,7 +203,6 @@
   function init() {
     restoreAppState()
     addListeners()
-    setOperatorType('-')
     toggleAllowBorrowing()
   }
 
