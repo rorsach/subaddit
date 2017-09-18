@@ -22,7 +22,7 @@
     let problem = {}
     
     for (let i = 0; i < appState.numberOfProblems; i++) {    
-      problem = generateProblem()
+      problem = generateProblem()      
       problemArray.push(problem)
     }
 
@@ -32,8 +32,8 @@
   function generateProblem() {
     let operand1 = 0
     let operand2 = 0
-    let difference = 0
-
+    let result = {}
+    
     let operand1String = ""
     let operand2String = ""
 
@@ -45,11 +45,13 @@
       operand1 = getRandomInt(0, 9)
 
       if (subtractionOperatorEl.checked) {
+
         if (appState.allowBorrowing) {
           operand2 = getRandomInt(0, 9)
         } else {
           operand2 = getRandomInt(0, operand1)
         }
+        
       } else {
         operand2 = getRandomInt(0, 9)
       }
@@ -58,10 +60,12 @@
       operand2String += operand2
     }
 
+    operand1 = parseInt(operand1String, 10)
+    operand2 = parseInt(operand2String, 10)
+    
     return {
-      operand1: parseInt(operand1String, 10),
-      operand2: parseInt(operand2String, 10),
-      result: operand1 - operand2
+      operand1: operand1,
+      operand2: operand2
     }
   }
   
