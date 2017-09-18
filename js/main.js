@@ -8,7 +8,6 @@
     operatorType: '+'
   }
 
-
   const numberOfProblemsEl = document.getElementById('numberOfProblems')
   const minDigitsEl = document.getElementById('minDigits')
   const maxDigitsEl = document.getElementById('maxDigits')
@@ -83,13 +82,16 @@
         setDigitLimits()
       }
     })
-
     
     maxDigitsEl.addEventListener("change", () => {
       if (minDigitsEl.value > maxDigitsEl.value) {
         minDigitsEl.value = maxDigitsEl.value
         setDigitLimits()
       }
+    })
+
+    allowBorrowingEl.addEventListener("change", (event) => {
+      setAllowBorrowing(event.target.checked)
     })
 
     maxDigitsEl.addEventListener("oninput", () => {
@@ -123,14 +125,14 @@
 
   function restoreAppState() {
     if (localStorage.getItem('appState')) {
-
+      console.log('restoring from localStorage')
       let jsonAppStateString = localStorage.getItem('appState')
       appState = JSON.parse(jsonAppStateString)
 
       numberOfProblemsEl.value = appState.numberOfProblems
       minDigitsEl.value = appState.minNumDigits
       maxDigitsEl.value = appState.maxNumDigits
-      allowBorrowing.checked = appState.allowBorrowing
+      allowBorrowingEl.checked = appState.allowBorrowing
 
       operatorTypeEl.forEach((radioButton) => {
         if (radioButton.value === appState.operatorType) {
@@ -139,6 +141,7 @@
       })
 
     } else {
+      console.log('Initializing localStorage')
       serializeAppState()
     }
   }
@@ -195,6 +198,10 @@
     })
   }
 
+  function setAllowBorrowing(value) {
+    appState.allowBorrowing = value;
+  }
+  
   function setNumberOfProblems(value) {
     value = value > 500 ? 500 : value
     appState.numberOfProblems = value
