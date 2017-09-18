@@ -43,8 +43,16 @@
     
     for (let i = 0; i < numDigits; i++) {
       operand1 = getRandomInt(0, 9)
-      operand2 = (subtractionOperatorEl.checked && appState.allowBorrowing) ? getRandomInt(0, 9) :  getRandomInt(0, operand1)
 
+      if (subtractionOperatorEl.checked) {
+        if (appState.allowBorrowing) {
+          operand2 = getRandomInt(0, 9)
+        } else {
+          operand2 = getRandomInt(0, operand1)
+        }
+      } else {
+        operand2 = getRandomInt(0, 9)
+      }
       
       operand1String += operand1
       operand2String += operand2
